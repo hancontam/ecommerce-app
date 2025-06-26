@@ -26,13 +26,5 @@
       "password": "123456"
     }
   ],
-  "cart": [
-    {
-      "id": "2",
-      "title": "Stylish Hat",
-      "price": 25.99,
-      "image": "https://placehold.co/300x200",
-      "quantity": 3
-    }
-  ]
+  "cart": []
 }
