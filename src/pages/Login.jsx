@@ -12,7 +12,7 @@ const Login = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:3001/users?email=${email}&password=${password}`
+        `https://ecommerce-json-server-8cha.onrender.com/users?email=${email}&password=${password}`
       );
       if (res.data.length > 0) {
         const user = res.data[0];

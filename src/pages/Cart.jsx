@@ -6,7 +6,7 @@ const Cart = () => {
 
   const fetchCart = () => {
     axios
-      .get("http://localhost:3001/cart")
+      .get("https://ecommerce-json-server-8cha.onrender.com/cart")
       .then((res) => setCartItems(res.data))
       .catch((err) => console.error(err));
   };
@@ -20,14 +20,16 @@ const Cart = () => {
 
     // const item = cartItems.find((item) => item.id === id);
     axios
-      .patch(`http://localhost:3001/cart/${id}`, {
+      .patch(`https://ecommerce-json-server-8cha.onrender.com/cart/${id}`, {
         quantity: newQty,
       })
       .then(fetchCart);
   };
 
   const removeItem = (id) => {
-    axios.delete(`http://localhost:3001/cart/${id}`).then(fetchCart);
+    axios
+      .delete(`https://ecommerce-json-server-8cha.onrender.com/cart/${id}`)
+      .then(fetchCart);
   };
 
   const totalPrice = cartItems.reduce(

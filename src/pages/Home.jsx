@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/products")
+      .get("https://ecommerce-json-server-8cha.onrender.com/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);

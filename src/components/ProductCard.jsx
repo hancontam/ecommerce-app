@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     };
 
     axios
-      .post("http://localhost:3001/cart", cartItem)
+      .post("https://ecommerce-json-server-8cha.onrender.com/cart", cartItem)
       .then(() => alert("Added to cart!"))
       .catch((err) => console.error(err));
   };
