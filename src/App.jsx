@@ -4,6 +4,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Error from "./pages/Error";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -11,7 +12,14 @@ function App() {
       <Navbar className="p-4" />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Error />} />
       </Routes>

@@ -13,7 +13,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # Up to date
 
-- Episode 7
+- Episode 9
 
 ## Reference
 

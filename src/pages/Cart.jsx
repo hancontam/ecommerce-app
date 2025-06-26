@@ -4,12 +4,31 @@ import axios from "axios";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
+  const fetchCart = () => {
     axios
       .get("http://localhost:3001/cart")
       .then((res) => setCartItems(res.data))
       .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    fetchCart();
   }, []);
+
+  const updateQuantity = (id, newQty) => {
+    if (newQty < 1) return;
+
+    // const item = cartItems.find((item) => item.id === id);
+    axios
+      .patch(`http://localhost:3001/cart/${id}`, {
+        quantity: newQty,
+      })
+      .then(fetchCart);
+  };
+
+  const removeItem = (id) => {
+    axios.delete(`http://localhost:3001/cart/${id}`).then(fetchCart);
+  };
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -26,17 +45,38 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="border p-4 rounded-xl flex justify-between"
+              className="border p-4 rounded-xl flex justify-between items-center"
             >
               <div>
                 <h2 className="font-semibold">{item.title}</h2>
-                <p>
-                  ${item.price} x {item.quantity}
-                </p>
+                <p>${item.price}</p>
+                <div className="flex items-center gap-2 mt-2">
+                  <button
+                    className="bg-gray-300 px-2 rounded"
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  >
+                    −
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    className="bg-gray-300 px-2 rounded"
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
-              <p className="font-bold">
-                ${(item.price * item.quantity).toFixed(2)}
-              </p>
+              <div className="text-right">
+                <p className="font-bold">
+                  ${(item.price * item.quantity).toFixed(2)}
+                </p>
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className="text-red-500 mt-2 hover:underline"
+                >
+                  Remove
+                </button>
+              </div>
             </div>
           ))}
           <div className="text-right font-bold text-xl mt-4">

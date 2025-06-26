@@ -17,6 +17,7 @@ const Login = () => {
       if (res.data.length > 0) {
         const user = res.data[0];
         localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("loginTime", Date.now()); //eposide 9
         alert("Login successful!");
         navigate("/");
       } else {
