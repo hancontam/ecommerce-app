@@ -10,32 +10,41 @@ const Navbar = () => {
   useEffect(() => {
     if (user) {
       const loginTime = parseInt(localStorage.getItem("loginTime"));
-
       const updateTimer = () => {
         const remaining = Math.max(
           0,
           10 * 60 - Math.floor((Date.now() - loginTime) / 1000)
         );
         setSecondsLeft(remaining);
+
+        // Thêm logic logout tự động
+        if (remaining === 0) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("loginTime");
+          navigate("/login");
+        }
       };
 
       updateTimer(); // Gọi ngay lập tức
       const interval = setInterval(updateTimer, 1000); // Cập nhật mỗi giây
-
       return () => clearInterval(interval); // Cleanup khi unmount
     }
-  }, [user]);
+  }, [user, navigate]);
+
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("loginTime");
     navigate("/");
   };
 
   return (
-    <nav className="bg-gray-800 text-white px-6 py-4 flex justify-between items-center">
-      <Link to="/" className="text-xl font-bold">
-        E-Shop
-      </Link>
-      <div className="space-x-4 flex items-center">
+    <nav className="flex items-center justify-between p-4 bg-blue-600 text-white flex-wrap">
+      <div className="space-x-4 mt-2 sm:mt-0">
+        <Link to="/" className="text-xl font-bold">
+          E-Shop
+        </Link>
+      </div>
+      <div className="space-x-4 mt-2 sm:mt-0">
         <Link to="/" className="hover:underline">
           Home
         </Link>

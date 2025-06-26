@@ -14,17 +14,16 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="border rounded-2xl shadow p-4 hover:shadow-lg transition">
+    <div className="bg-white rounded-2xl shadow-md p-4 flex flex-col hover:shadow-lg transition">
       <img
         src={product.image}
-        alt={product.title}
-        className="w-full h-48 object-cover rounded-lg"
+        className="w-full h-48 object-cover rounded-lg mb-4"
       />
-      <h2 className="mt-4 text-xl font-semibold">{product.title}</h2>
-      <p className="text-gray-700">${product.price}</p>
+      <h2 className="text-lg font-semibold line-clamp-2">{product.title}</h2>
+      <p className="text-blue-600 font-bold mt-2">${product.price}</p>
       <button
         onClick={addToCart}
-        className="mt-2 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="mt-auto bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
       >
         Add to Cart
       </button>

@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-import Error from "./pages/Error";
+import NotFound from "./pages/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

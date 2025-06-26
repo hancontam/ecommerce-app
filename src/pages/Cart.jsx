@@ -45,21 +45,21 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="border p-4 rounded-xl flex justify-between items-center"
+              className="border p-4 rounded-xl flex flex-col sm:flex-row justify-between gap-4 items-center"
             >
               <div>
-                <h2 className="font-semibold">{item.title}</h2>
-                <p>${item.price}</p>
+                <h2 className="font-semibold text-lg">{item.title}</h2>
+                <p className="text-gray-600">${item.price}</p>
                 <div className="flex items-center gap-2 mt-2">
                   <button
-                    className="bg-gray-300 px-2 rounded"
+                    className="bg-gray-200 px-2 py-1 rounded"
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
                   >
                     −
                   </button>
                   <span>{item.quantity}</span>
                   <button
-                    className="bg-gray-300 px-2 rounded"
+                    className="bg-gray-200 px-2 py-1 rounded"
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
                   >
                     +
