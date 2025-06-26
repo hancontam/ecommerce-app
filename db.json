@@ -28,32 +28,11 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "title": "Basic T-Shirt",
-      "price": 19.99,
+      "id": "2",
+      "title": "Stylish Hat",
+      "price": 25.99,
       "image": "https://placehold.co/300x200",
-      "quantity": 2
-    },
-    {
-      "id": "3",
-      "title": "Running Shoes",
-      "price": 49.99,
-      "image": "https://placehold.co/300x200",
-      "quantity": 1
-    },
-    {
-      "id": "3",
-      "title": "Running Shoes",
-      "price": 49.99,
-      "image": "https://placehold.co/300x200",
-      "quantity": 1
-    },
-    {
-      "id": "3",
-      "title": "Running Shoes",
-      "price": 49.99,
-      "image": "https://placehold.co/300x200",
-      "quantity": 1
+      "quantity": 3
     }
   ]
 }

@@ -13,6 +13,8 @@ If you are developing a production application, we recommend using TypeScript wi
 
 # Just a project Vite + React + Tailwindcss v3
 
+**Deploy**: https://ecommerce-app-zeta-lemon.vercel.app/
+
 ## Up to date
 
 - Episode 10
