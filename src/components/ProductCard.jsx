@@ -1,9 +1,18 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
   const addToCart = () => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
     const cartItem = {
-      ...product,
+      id: product.id,
+      title: product.title,
+      price: product.price,
       quantity: 1,
     };
 
