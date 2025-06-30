@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className="flex items-center justify-between p-4 bg-blue-600 text-white flex-wrap">
       <div className="space-x-4 mt-2 sm:mt-0">
         <Link to="/" className="text-xl font-bold">
-          E-Shop
+          Sốp Con Cá
         </Link>
       </div>
       <div className="space-x-4 mt-2 sm:mt-0">
