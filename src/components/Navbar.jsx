@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-blue-600 text-white flex-wrap">
+    <nav className="flex items-center justify-between p-4 bg-red-600 text-white flex-wrap">
       <div className="space-x-4 mt-2 sm:mt-0">
         <Link to="/" className="text-xl font-bold">
           Sốp Con Cá

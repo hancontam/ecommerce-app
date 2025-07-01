@@ -29,10 +29,10 @@ const ProductCard = ({ product }) => {
         className="w-full h-48 object-cover rounded-lg mb-4"
       />
       <h2 className="text-lg font-semibold line-clamp-2">{product.title}</h2>
-      <p className="text-blue-600 font-bold mt-2">${product.price}</p>
+      <p className="text-red-600 font-bold mt-2">${product.price}</p>
       <button
         onClick={addToCart}
-        className="mt-auto bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        className="mt-auto bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition"
       >
         Add to Cart
       </button>
