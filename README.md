@@ -15,7 +15,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 **Deploy**:
 
-- https://ecommerce-app-zeta-lemon.vercel.app/
+- https://ecommerce-app-zeta-lemon-hct.vercel.app/
 - https://stupendous-lamington-426e9d.netlify.app/
 
 ## Up to date
